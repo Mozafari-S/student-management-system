@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+
+    <section class="card">
+      <h1>Student Management System</h1>
+      <p class="description">
+        A computerized system for managing student records, registration, attendance, academic information, and related data.
+      </p>
+      <p class="role"><strong>Role:</strong> System Designer</p>
+    </section>
+
+    <section class="stats">
+      <div class="card stat"><span id="statTotal">0</span><small>Students</small></div>
+      <div class="card stat"><span id="statPresent">0</span><small>Present today</small></div>
+      <div class="card stat"><span id="statAbsent">0</span><small>Absent today</small></div>
+    </section>
+
+    <section class="card">
+      <h2>Register student</h2>
+      <form id="studentForm" class="form">
+        <label>Full name
+          <input type="text" id="name" required maxlength="60" placeholder="e.g. Ayesha Khan">
+        </label>
+        <label>Roll number
+          <input type="text" id="roll" required maxlength="20" placeholder="e.g. 101">
+        </label>
+        <label>Class
+          <input type="text" id="className" required maxlength="20" placeholder="e.g. 10-A">
+        </label>
+        <label>Marks (%)
+          <input type="number" id="marks" min="0" max="100" placeholder="optional">
+        </label>
+        <button type="submit">Add student</button>
+      </form>
+      <p id="formError" class="error" role="alert"></p>
+    </section>
+
+    <section class="card">
+      <div class="list-head">
+        <h2>Students</h2>
+        <input type="search" id="search" placeholder="Search by name, roll or class">
+      </div>
+      <p class="today">Attendance for <strong id="todayLabel"></strong></p>
+      <ul id="studentList" class="list"></ul>
+      <p id="emptyMsg" class="empty">No students yet. Add your first student above.</p>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
